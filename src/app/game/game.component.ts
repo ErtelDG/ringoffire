@@ -23,8 +23,12 @@ export class GameComponent {
   }
 
   takeCard() {
-    this.currentCard = this.game.stack.pop();
-    this.pickCardAnimation = true;
-    console.log(this.currentCard)
+    if (!this.pickCardAnimation) {
+      this.currentCard = this.game.stack.pop();
+      this.pickCardAnimation = true;
+      setTimeout(() => {
+        this.pickCardAnimation = false;
+      }, 1500);
+    }
   }
 }

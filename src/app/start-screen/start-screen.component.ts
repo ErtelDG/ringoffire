@@ -11,7 +11,6 @@ export class StartScreenComponent {
 constructor(private router:Router){}
 
   newGame() {
-    alert('go');
     this.router.navigateByUrl('game')
   }
 

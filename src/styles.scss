@@ -563,7 +563,7 @@ audio,
 iframe,
 embed,
 object {
-  display: block;
+  // display: block;
   /* 1 */
   vertical-align: middle;
   /* 2 */
@@ -17849,6 +17849,10 @@ body, html {
 
 .bg-gold-banner {
   background-image: url('./assets/img/gold-banner.png');
+}
+
+.bg-board {
+  background-image: url('./assets/img/board.jpg');
 }
 
 .from-transparent {
@@ -48860,6 +48864,10 @@ body, html {
     background-image: url('./assets/img/gold-banner.png');
   }
 
+  .sm\:bg-board {
+    background-image: url('./assets/img/board.jpg');
+  }
+
   .sm\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -79191,6 +79199,10 @@ body, html {
 
   .md\:bg-gold-banner {
     background-image: url('./assets/img/gold-banner.png');
+  }
+
+  .md\:bg-board {
+    background-image: url('./assets/img/board.jpg');
   }
 
   .md\:from-transparent {
@@ -109526,6 +109538,10 @@ body, html {
     background-image: url('./assets/img/gold-banner.png');
   }
 
+  .lg\:bg-board {
+    background-image: url('./assets/img/board.jpg');
+  }
+
   .lg\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -139859,6 +139875,10 @@ body, html {
     background-image: url('./assets/img/gold-banner.png');
   }
 
+  .xl\:bg-board {
+    background-image: url('./assets/img/board.jpg');
+  }
+
   .xl\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -170190,6 +170210,10 @@ body, html {
 
   .\32xl\:bg-gold-banner {
     background-image: url('./assets/img/gold-banner.png');
+  }
+
+  .\32xl\:bg-board {
+    background-image: url('./assets/img/board.jpg');
   }
 
   .\32xl\:from-transparent {

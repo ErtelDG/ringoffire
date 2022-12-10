@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "gold-banner": "url('./assets/img/gold-banner.png')",
+        "board": "url('./assets/img/board.jpg')",
       },
       gridTemplateRows: {
         8: "repeat(8, minmax(0, 1fr))",

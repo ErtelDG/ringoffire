@@ -17847,6 +17847,10 @@ body, html {
   background-image: linear-gradient(to top left, var(--tw-gradient-stops));
 }
 
+.bg-gold-banner {
+  background-image: url('./assets/img/gold-banner.png');
+}
+
 .from-transparent {
   --tw-gradient-from: transparent;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -48852,6 +48856,10 @@ body, html {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
   }
 
+  .sm\:bg-gold-banner {
+    background-image: url('./assets/img/gold-banner.png');
+  }
+
   .sm\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -79179,6 +79187,10 @@ body, html {
 
   .md\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  }
+
+  .md\:bg-gold-banner {
+    background-image: url('./assets/img/gold-banner.png');
   }
 
   .md\:from-transparent {
@@ -109510,6 +109522,10 @@ body, html {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
   }
 
+  .lg\:bg-gold-banner {
+    background-image: url('./assets/img/gold-banner.png');
+  }
+
   .lg\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -139839,6 +139855,10 @@ body, html {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
   }
 
+  .xl\:bg-gold-banner {
+    background-image: url('./assets/img/gold-banner.png');
+  }
+
   .xl\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -170166,6 +170186,10 @@ body, html {
 
   .\32xl\:bg-gradient-to-tl {
     background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  }
+
+  .\32xl\:bg-gold-banner {
+    background-image: url('./assets/img/gold-banner.png');
   }
 
   .\32xl\:from-transparent {

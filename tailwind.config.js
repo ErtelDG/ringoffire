@@ -4,6 +4,9 @@ module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {
+      backgroundImage: {
+        "gold-banner": "url('./assets/img/gold-banner.png')",
+      },
       gridTemplateRows: {
         8: "repeat(8, minmax(0, 1fr))",
         10: "repeat(10, minmax(0, 1fr))",

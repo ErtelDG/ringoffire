@@ -1,6 +1,13 @@
 <div class="w-full h-full grid grid-cols-12 grid-rows-10 bg-board bg-cover">
-  <div class="col-start-10 col-span-3 row-start-2 row-end-10">
-    <app-player></app-player>
+  <div class="col-start-10 col-span-3 row-start-2 row-end-10 flex flex-col justify-between">
+    <div>
+      <app-player *ngFor="let player of game.players;" [name]="player"></app-player>
+    </div>
+    <div class="flex justify-center items-center">
+      <button mat-fab color="primary" (click)="openDialog()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
   </div>
   <div class="row-start-5 row-span-5 col-start-2 col-span-5 relative flex justify-center items-center">
     <!-- card-stack -->
@@ -10,10 +17,12 @@
       src="../../assets/img/cards/card_cover.png">
 
     <!-- Stack for player cards -->
-    <img *ngFor="let card of game.playerCard" class="absolute played-card w-32 h-48" src="../../assets/img/cards/{{card}}.png">
+    <img *ngFor="let card of game.playerCard" class="absolute played-card w-32 h-48"
+      src="../../assets/img/cards/{{card}}.png">
 
     <!-- current cars (animation) -->
-    <img (click)="takeCard()" *ngIf="pickCardAnimation" class="absolute cursor-pointer w-32 h-48 transition-card pick-Card"
-      style="right:25px" src="../../assets/img/cards/{{currentCard}}.png">
+    <img (click)="takeCard()" *ngIf="pickCardAnimation"
+      class="absolute cursor-pointer w-32 h-48 transition-card pick-Card" style="right:25px"
+      src="../../assets/img/cards/{{currentCard}}.png">
   </div>
 </div>

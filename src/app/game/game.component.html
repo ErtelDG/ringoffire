@@ -13,18 +13,18 @@
   <div class="row-start-6 row-span-5 col-start-2 col-span-5 relative flex justify-center items-center">
     <!-- card-stack -->
     <img *ngFor="let card of [0,1,2,3]; let i = index" [ngStyle]="{'right.px': i*5}" class="absolute w-28 h-42"
-      src="../../assets/img/cards/card_cover.png">
+      src="assets/img/cards/card_cover.png">
     <img (click)="takeCard()" class="absolute cursor-pointer w-28 h-42" style="right:25px"
-      src="../../assets/img/cards/card_cover.png">
+      src="assets/img/cards/card_cover.png">
 
     <!-- Stack for player cards -->
     <img *ngFor="let card of game.playerCard" class="absolute played-card w-28 h-42"
-      src="../../assets/img/cards/{{card}}.png">
+      src="assets/img/cards/{{card}}.png">
 
     <!-- current cars (animation) -->
     <img (click)="takeCard()" *ngIf="pickCardAnimation"
       class="absolute cursor-pointer w-28 h-42 transition-card pick-Card" style="right:25px"
-      src="../../assets/img/cards/{{currentCard}}.png">
+      src="assets/img/cards/{{currentCard}}.png">
   </div>
 
   <!-- game info -->

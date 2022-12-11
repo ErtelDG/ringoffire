@@ -1,12 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: ["./src/**/*.html"],
   content: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {
       backgroundImage: {
         "gold-banner": "url('./assets/img/gold-banner.png')",
-        "board": "url('./assets/img/board.jpg')",
+        board: "url('./assets/img/board.jpg')",
       },
       gridTemplateRows: {
         8: "repeat(8, minmax(0, 1fr))",
@@ -30,6 +29,7 @@ module.exports = {
         12: "12",
         13: "13",
       },
+ 
     },
   },
   plugins: [],

@@ -10,7 +10,6 @@ import { Game } from 'src/models/game';
 export class GameComponent {
   pickCardAnimation = false;
   currentCard: any = '';
-  currentPlayerCard: string | undefined;
   game: Game = new Game();
 
   constructor() {}
@@ -28,15 +27,14 @@ export class GameComponent {
     if (!this.pickCardAnimation) {
       this.currentCard = this.game.stack.pop();
       this.pickCardAnimation = true;
-      this.game.playerCard.push(this.currentCard);
-      this.currentPlayerCard = this.game.playerCard[this.game.playerCard.length - 1];
+
       console.log(this.game.playerCard);
       console.log(this.game.stack);
-      console.log(this.currentPlayerCard);
 
       setTimeout(() => {
+        this.game.playerCard.push(this.currentCard);
         this.pickCardAnimation = false;
-      }, 1500);
+      }, 1000);
     }
   }
 }

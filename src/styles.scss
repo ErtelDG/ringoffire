@@ -6887,11 +6887,13 @@ body, html {
 }
 
 .w-min {
+  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
 }
 
 .w-max {
+  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
@@ -6905,11 +6907,13 @@ body, html {
 }
 
 .min-w-min {
+  min-width: -webkit-min-content;
   min-width: -moz-min-content;
   min-width: min-content;
 }
 
 .min-w-max {
+  min-width: -webkit-max-content;
   min-width: -moz-max-content;
   min-width: max-content;
 }
@@ -6971,11 +6975,13 @@ body, html {
 }
 
 .max-w-min {
+  max-width: -webkit-min-content;
   max-width: -moz-min-content;
   max-width: min-content;
 }
 
 .max-w-max {
+  max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
 }
@@ -9988,9 +9994,22 @@ body, html {
   --tw-scale-y: 1.5;
 }
 
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
   }
 }
 
@@ -10001,42 +10020,69 @@ body, html {
   }
 }
 
+@-webkit-keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
 @keyframes pulse {
   50% {
     opacity: .5;
   }
 }
 
-@keyframes bounce {
+@-webkit-keyframes bounce {
   0%, 100% {
     transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8,0,1,1);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
   }
 
   50% {
     transform: none;
-    animation-timing-function: cubic-bezier(0,0,0.2,1);
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
   }
 }
 
 .animate-none {
-  animation: none;
+  -webkit-animation: none;
+          animation: none;
 }
 
 .animate-spin {
-  animation: spin 1s linear infinite;
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
 }
 
 .animate-ping {
-  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+          animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 .animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .animate-bounce {
-  animation: bounce 1s infinite;
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
 }
 
 .cursor-auto {
@@ -10142,10 +10188,12 @@ body, html {
 }
 
 .auto-cols-min {
+  grid-auto-columns: -webkit-min-content;
   grid-auto-columns: min-content;
 }
 
 .auto-cols-max {
+  grid-auto-columns: -webkit-max-content;
   grid-auto-columns: max-content;
 }
 
@@ -10174,10 +10222,12 @@ body, html {
 }
 
 .auto-rows-min {
+  grid-auto-rows: -webkit-min-content;
   grid-auto-rows: min-content;
 }
 
 .auto-rows-max {
+  grid-auto-rows: -webkit-max-content;
   grid-auto-rows: max-content;
 }
 
@@ -31304,328 +31354,326 @@ body, html {
   content: none;
 }
 
+/* ibm-plex-sans-100 - latin */
+
 @font-face {
-  /* ibm-plex-sans-100 - latin */
+  font-family: 'IBM Plex Sans';
 
-  @font-face {
-    font-family: 'IBM Plex Sans';
+  font-style: normal;
 
-    font-style: normal;
+  font-weight: 100;
 
-    font-weight: 100;
+  src: url('./assets/fonts/ibm-plex-sans-v14-latin-100.eot');
 
-    src: url('./assets/fonts/ibm-plex-sans-v14-latin-100.eot');
+  /* IE9 Compat Modes */
 
-    /* IE9 Compat Modes */
-
-    src: local(''),
+  src: local(''),
        url('./assets/fonts/ibm-plex-sans-v14-latin-100.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('./assets/fonts/ibm-plex-sans-v14-latin-100.woff2') format('woff2'), /* Super Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-100.woff') format('woff'), /* Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-100.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./assets/fonts/ibm-plex-sans-v14-latin-100.svg#IBMPlexSans') format('svg');
 
-    /* Legacy iOS */
-  }
+  /* Legacy iOS */
+}
 
-  /* ibm-plex-sans-100italic - latin */
+/* ibm-plex-sans-100italic - latin */
 
-  @font-face {
-    font-family: 'IBM Plex Sans';
+@font-face {
+  font-family: 'IBM Plex Sans';
 
-    font-style: italic;
+  font-style: italic;
 
-    font-weight: 100;
+  font-weight: 100;
 
-    src: url('./assets/fonts/ibm-plex-sans-v14-latin-100italic.eot');
+  src: url('./assets/fonts/ibm-plex-sans-v14-latin-100italic.eot');
 
-    /* IE9 Compat Modes */
+  /* IE9 Compat Modes */
 
-    src: local(''),
+  src: local(''),
        url('./assets/fonts/ibm-plex-sans-v14-latin-100italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('./assets/fonts/ibm-plex-sans-v14-latin-100italic.woff2') format('woff2'), /* Super Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-100italic.woff') format('woff'), /* Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-100italic.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./assets/fonts/ibm-plex-sans-v14-latin-100italic.svg#IBMPlexSans') format('svg');
 
-    /* Legacy iOS */
-  }
+  /* Legacy iOS */
+}
 
-  /* ibm-plex-sans-200 - latin */
+/* ibm-plex-sans-200 - latin */
 
-  @font-face {
-    font-family: 'IBM Plex Sans';
+@font-face {
+  font-family: 'IBM Plex Sans';
 
-    font-style: normal;
+  font-style: normal;
 
-    font-weight: 200;
+  font-weight: 200;
 
-    src: url('./assets/fonts/ibm-plex-sans-v14-latin-200.eot');
+  src: url('./assets/fonts/ibm-plex-sans-v14-latin-200.eot');
 
-    /* IE9 Compat Modes */
+  /* IE9 Compat Modes */
 
-    src: local(''),
+  src: local(''),
        url('./assets/fonts/ibm-plex-sans-v14-latin-200.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('./assets/fonts/ibm-plex-sans-v14-latin-200.woff2') format('woff2'), /* Super Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-200.woff') format('woff'), /* Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-200.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./assets/fonts/ibm-plex-sans-v14-latin-200.svg#IBMPlexSans') format('svg');
 
-    /* Legacy iOS */
-  }
+  /* Legacy iOS */
+}
 
-  /* ibm-plex-sans-200italic - latin */
+/* ibm-plex-sans-200italic - latin */
 
-  @font-face {
-    font-family: 'IBM Plex Sans';
+@font-face {
+  font-family: 'IBM Plex Sans';
 
-    font-style: italic;
+  font-style: italic;
 
-    font-weight: 200;
+  font-weight: 200;
 
-    src: url('./assets/fonts/ibm-plex-sans-v14-latin-200italic.eot');
+  src: url('./assets/fonts/ibm-plex-sans-v14-latin-200italic.eot');
 
-    /* IE9 Compat Modes */
+  /* IE9 Compat Modes */
 
-    src: local(''),
+  src: local(''),
        url('./assets/fonts/ibm-plex-sans-v14-latin-200italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('./assets/fonts/ibm-plex-sans-v14-latin-200italic.woff2') format('woff2'), /* Super Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-200italic.woff') format('woff'), /* Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-200italic.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./assets/fonts/ibm-plex-sans-v14-latin-200italic.svg#IBMPlexSans') format('svg');
 
-    /* Legacy iOS */
-  }
+  /* Legacy iOS */
+}
 
-  /* ibm-plex-sans-300 - latin */
+/* ibm-plex-sans-300 - latin */
 
-  @font-face {
-    font-family: 'IBM Plex Sans';
+@font-face {
+  font-family: 'IBM Plex Sans';
 
-    font-style: normal;
+  font-style: normal;
 
-    font-weight: 300;
+  font-weight: 300;
 
-    src: url('./assets/fonts/ibm-plex-sans-v14-latin-300.eot');
+  src: url('./assets/fonts/ibm-plex-sans-v14-latin-300.eot');
 
-    /* IE9 Compat Modes */
+  /* IE9 Compat Modes */
 
-    src: local(''),
+  src: local(''),
        url('./assets/fonts/ibm-plex-sans-v14-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('./assets/fonts/ibm-plex-sans-v14-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-300.woff') format('woff'), /* Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./assets/fonts/ibm-plex-sans-v14-latin-300.svg#IBMPlexSans') format('svg');
 
-    /* Legacy iOS */
-  }
+  /* Legacy iOS */
+}
 
-  /* ibm-plex-sans-300italic - latin */
+/* ibm-plex-sans-300italic - latin */
 
-  @font-face {
-    font-family: 'IBM Plex Sans';
+@font-face {
+  font-family: 'IBM Plex Sans';
 
-    font-style: italic;
+  font-style: italic;
 
-    font-weight: 300;
+  font-weight: 300;
 
-    src: url('./assets/fonts/ibm-plex-sans-v14-latin-300italic.eot');
+  src: url('./assets/fonts/ibm-plex-sans-v14-latin-300italic.eot');
 
-    /* IE9 Compat Modes */
+  /* IE9 Compat Modes */
 
-    src: local(''),
+  src: local(''),
        url('./assets/fonts/ibm-plex-sans-v14-latin-300italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('./assets/fonts/ibm-plex-sans-v14-latin-300italic.woff2') format('woff2'), /* Super Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-300italic.woff') format('woff'), /* Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-300italic.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./assets/fonts/ibm-plex-sans-v14-latin-300italic.svg#IBMPlexSans') format('svg');
 
-    /* Legacy iOS */
-  }
+  /* Legacy iOS */
+}
 
-  /* ibm-plex-sans-regular - latin */
+/* ibm-plex-sans-regular - latin */
 
-  @font-face {
-    font-family: 'IBM Plex Sans';
+@font-face {
+  font-family: 'IBM Plex Sans';
 
-    font-style: normal;
+  font-style: normal;
 
-    font-weight: 400;
+  font-weight: 400;
 
-    src: url('./assets/fonts/ibm-plex-sans-v14-latin-regular.eot');
+  src: url('./assets/fonts/ibm-plex-sans-v14-latin-regular.eot');
 
-    /* IE9 Compat Modes */
+  /* IE9 Compat Modes */
 
-    src: local(''),
+  src: local(''),
        url('./assets/fonts/ibm-plex-sans-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('./assets/fonts/ibm-plex-sans-v14-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-regular.woff') format('woff'), /* Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./assets/fonts/ibm-plex-sans-v14-latin-regular.svg#IBMPlexSans') format('svg');
 
-    /* Legacy iOS */
-  }
+  /* Legacy iOS */
+}
 
-  /* ibm-plex-sans-italic - latin */
+/* ibm-plex-sans-italic - latin */
 
-  @font-face {
-    font-family: 'IBM Plex Sans';
+@font-face {
+  font-family: 'IBM Plex Sans';
 
-    font-style: italic;
+  font-style: italic;
 
-    font-weight: 400;
+  font-weight: 400;
 
-    src: url('./assets/fonts/ibm-plex-sans-v14-latin-italic.eot');
+  src: url('./assets/fonts/ibm-plex-sans-v14-latin-italic.eot');
 
-    /* IE9 Compat Modes */
+  /* IE9 Compat Modes */
 
-    src: local(''),
+  src: local(''),
        url('./assets/fonts/ibm-plex-sans-v14-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('./assets/fonts/ibm-plex-sans-v14-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-italic.woff') format('woff'), /* Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./assets/fonts/ibm-plex-sans-v14-latin-italic.svg#IBMPlexSans') format('svg');
 
-    /* Legacy iOS */
-  }
+  /* Legacy iOS */
+}
 
-  /* ibm-plex-sans-500 - latin */
+/* ibm-plex-sans-500 - latin */
 
-  @font-face {
-    font-family: 'IBM Plex Sans';
+@font-face {
+  font-family: 'IBM Plex Sans';
 
-    font-style: normal;
+  font-style: normal;
 
-    font-weight: 500;
+  font-weight: 500;
 
-    src: url('./assets/fonts/ibm-plex-sans-v14-latin-500.eot');
+  src: url('./assets/fonts/ibm-plex-sans-v14-latin-500.eot');
 
-    /* IE9 Compat Modes */
+  /* IE9 Compat Modes */
 
-    src: local(''),
+  src: local(''),
        url('./assets/fonts/ibm-plex-sans-v14-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('./assets/fonts/ibm-plex-sans-v14-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-500.woff') format('woff'), /* Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./assets/fonts/ibm-plex-sans-v14-latin-500.svg#IBMPlexSans') format('svg');
 
-    /* Legacy iOS */
-  }
+  /* Legacy iOS */
+}
 
-  /* ibm-plex-sans-500italic - latin */
+/* ibm-plex-sans-500italic - latin */
 
-  @font-face {
-    font-family: 'IBM Plex Sans';
+@font-face {
+  font-family: 'IBM Plex Sans';
 
-    font-style: italic;
+  font-style: italic;
 
-    font-weight: 500;
+  font-weight: 500;
 
-    src: url('./assets/fonts/ibm-plex-sans-v14-latin-500italic.eot');
+  src: url('./assets/fonts/ibm-plex-sans-v14-latin-500italic.eot');
 
-    /* IE9 Compat Modes */
+  /* IE9 Compat Modes */
 
-    src: local(''),
+  src: local(''),
        url('./assets/fonts/ibm-plex-sans-v14-latin-500italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('./assets/fonts/ibm-plex-sans-v14-latin-500italic.woff2') format('woff2'), /* Super Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-500italic.woff') format('woff'), /* Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-500italic.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./assets/fonts/ibm-plex-sans-v14-latin-500italic.svg#IBMPlexSans') format('svg');
 
-    /* Legacy iOS */
-  }
+  /* Legacy iOS */
+}
 
-  /* ibm-plex-sans-600 - latin */
+/* ibm-plex-sans-600 - latin */
 
-  @font-face {
-    font-family: 'IBM Plex Sans';
+@font-face {
+  font-family: 'IBM Plex Sans';
 
-    font-style: normal;
+  font-style: normal;
 
-    font-weight: 600;
+  font-weight: 600;
 
-    src: url('./assets/fonts/ibm-plex-sans-v14-latin-600.eot');
+  src: url('./assets/fonts/ibm-plex-sans-v14-latin-600.eot');
 
-    /* IE9 Compat Modes */
+  /* IE9 Compat Modes */
 
-    src: local(''),
+  src: local(''),
        url('./assets/fonts/ibm-plex-sans-v14-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('./assets/fonts/ibm-plex-sans-v14-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-600.woff') format('woff'), /* Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./assets/fonts/ibm-plex-sans-v14-latin-600.svg#IBMPlexSans') format('svg');
 
-    /* Legacy iOS */
-  }
+  /* Legacy iOS */
+}
 
-  /* ibm-plex-sans-600italic - latin */
+/* ibm-plex-sans-600italic - latin */
 
-  @font-face {
-    font-family: 'IBM Plex Sans';
+@font-face {
+  font-family: 'IBM Plex Sans';
 
-    font-style: italic;
+  font-style: italic;
 
-    font-weight: 600;
+  font-weight: 600;
 
-    src: url('./assets/fonts/ibm-plex-sans-v14-latin-600italic.eot');
+  src: url('./assets/fonts/ibm-plex-sans-v14-latin-600italic.eot');
 
-    /* IE9 Compat Modes */
+  /* IE9 Compat Modes */
 
-    src: local(''),
+  src: local(''),
        url('./assets/fonts/ibm-plex-sans-v14-latin-600italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('./assets/fonts/ibm-plex-sans-v14-latin-600italic.woff2') format('woff2'), /* Super Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-600italic.woff') format('woff'), /* Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-600italic.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./assets/fonts/ibm-plex-sans-v14-latin-600italic.svg#IBMPlexSans') format('svg');
 
-    /* Legacy iOS */
-  }
+  /* Legacy iOS */
+}
 
-  /* ibm-plex-sans-700 - latin */
+/* ibm-plex-sans-700 - latin */
 
-  @font-face {
-    font-family: 'IBM Plex Sans';
+@font-face {
+  font-family: 'IBM Plex Sans';
 
-    font-style: normal;
+  font-style: normal;
 
-    font-weight: 700;
+  font-weight: 700;
 
-    src: url('./assets/fonts/ibm-plex-sans-v14-latin-700.eot');
+  src: url('./assets/fonts/ibm-plex-sans-v14-latin-700.eot');
 
-    /* IE9 Compat Modes */
+  /* IE9 Compat Modes */
 
-    src: local(''),
+  src: local(''),
        url('./assets/fonts/ibm-plex-sans-v14-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('./assets/fonts/ibm-plex-sans-v14-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-700.woff') format('woff'), /* Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./assets/fonts/ibm-plex-sans-v14-latin-700.svg#IBMPlexSans') format('svg');
 
-    /* Legacy iOS */
-  }
+  /* Legacy iOS */
+}
 
-  /* ibm-plex-sans-700italic - latin */
+/* ibm-plex-sans-700italic - latin */
 
-  @font-face {
-    font-family: 'IBM Plex Sans';
+@font-face {
+  font-family: 'IBM Plex Sans';
 
-    font-style: italic;
+  font-style: italic;
 
-    font-weight: 700;
+  font-weight: 700;
 
-    src: url('./assets/fonts/ibm-plex-sans-v14-latin-700italic.eot');
+  src: url('./assets/fonts/ibm-plex-sans-v14-latin-700italic.eot');
 
-    /* IE9 Compat Modes */
+  /* IE9 Compat Modes */
 
-    src: local(''),
+  src: local(''),
        url('./assets/fonts/ibm-plex-sans-v14-latin-700italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('./assets/fonts/ibm-plex-sans-v14-latin-700italic.woff2') format('woff2'), /* Super Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-700italic.woff') format('woff'), /* Modern Browsers */
        url('./assets/fonts/ibm-plex-sans-v14-latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./assets/fonts/ibm-plex-sans-v14-latin-700italic.svg#IBMPlexSans') format('svg');
 
-    /* Legacy iOS */
-  }
+  /* Legacy iOS */
 }
 
 @media (min-width: 640px) {
@@ -37916,11 +37964,13 @@ body, html {
   }
 
   .sm\:w-min {
+    width: -webkit-min-content;
     width: -moz-min-content;
     width: min-content;
   }
 
   .sm\:w-max {
+    width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
   }
@@ -37934,11 +37984,13 @@ body, html {
   }
 
   .sm\:min-w-min {
+    min-width: -webkit-min-content;
     min-width: -moz-min-content;
     min-width: min-content;
   }
 
   .sm\:min-w-max {
+    min-width: -webkit-max-content;
     min-width: -moz-max-content;
     min-width: max-content;
   }
@@ -38000,11 +38052,13 @@ body, html {
   }
 
   .sm\:max-w-min {
+    max-width: -webkit-min-content;
     max-width: -moz-min-content;
     max-width: min-content;
   }
 
   .sm\:max-w-max {
+    max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
   }
@@ -41018,23 +41072,28 @@ body, html {
   }
 
   .sm\:animate-none {
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
   }
 
   .sm\:animate-spin {
-    animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+            animation: spin 1s linear infinite;
   }
 
   .sm\:animate-ping {
-    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
   .sm\:animate-pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .sm\:animate-bounce {
-    animation: bounce 1s infinite;
+    -webkit-animation: bounce 1s infinite;
+            animation: bounce 1s infinite;
   }
 
   .sm\:cursor-auto {
@@ -41140,10 +41199,12 @@ body, html {
   }
 
   .sm\:auto-cols-min {
+    grid-auto-columns: -webkit-min-content;
     grid-auto-columns: min-content;
   }
 
   .sm\:auto-cols-max {
+    grid-auto-columns: -webkit-max-content;
     grid-auto-columns: max-content;
   }
 
@@ -41172,10 +41233,12 @@ body, html {
   }
 
   .sm\:auto-rows-min {
+    grid-auto-rows: -webkit-min-content;
     grid-auto-rows: min-content;
   }
 
   .sm\:auto-rows-max {
+    grid-auto-rows: -webkit-max-content;
     grid-auto-rows: max-content;
   }
 
@@ -68238,11 +68301,13 @@ body, html {
   }
 
   .md\:w-min {
+    width: -webkit-min-content;
     width: -moz-min-content;
     width: min-content;
   }
 
   .md\:w-max {
+    width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
   }
@@ -68256,11 +68321,13 @@ body, html {
   }
 
   .md\:min-w-min {
+    min-width: -webkit-min-content;
     min-width: -moz-min-content;
     min-width: min-content;
   }
 
   .md\:min-w-max {
+    min-width: -webkit-max-content;
     min-width: -moz-max-content;
     min-width: max-content;
   }
@@ -68322,11 +68389,13 @@ body, html {
   }
 
   .md\:max-w-min {
+    max-width: -webkit-min-content;
     max-width: -moz-min-content;
     max-width: min-content;
   }
 
   .md\:max-w-max {
+    max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
   }
@@ -71340,23 +71409,28 @@ body, html {
   }
 
   .md\:animate-none {
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
   }
 
   .md\:animate-spin {
-    animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+            animation: spin 1s linear infinite;
   }
 
   .md\:animate-ping {
-    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
   .md\:animate-pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .md\:animate-bounce {
-    animation: bounce 1s infinite;
+    -webkit-animation: bounce 1s infinite;
+            animation: bounce 1s infinite;
   }
 
   .md\:cursor-auto {
@@ -71462,10 +71536,12 @@ body, html {
   }
 
   .md\:auto-cols-min {
+    grid-auto-columns: -webkit-min-content;
     grid-auto-columns: min-content;
   }
 
   .md\:auto-cols-max {
+    grid-auto-columns: -webkit-max-content;
     grid-auto-columns: max-content;
   }
 
@@ -71494,10 +71570,12 @@ body, html {
   }
 
   .md\:auto-rows-min {
+    grid-auto-rows: -webkit-min-content;
     grid-auto-rows: min-content;
   }
 
   .md\:auto-rows-max {
+    grid-auto-rows: -webkit-max-content;
     grid-auto-rows: max-content;
   }
 
@@ -98560,11 +98638,13 @@ body, html {
   }
 
   .lg\:w-min {
+    width: -webkit-min-content;
     width: -moz-min-content;
     width: min-content;
   }
 
   .lg\:w-max {
+    width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
   }
@@ -98578,11 +98658,13 @@ body, html {
   }
 
   .lg\:min-w-min {
+    min-width: -webkit-min-content;
     min-width: -moz-min-content;
     min-width: min-content;
   }
 
   .lg\:min-w-max {
+    min-width: -webkit-max-content;
     min-width: -moz-max-content;
     min-width: max-content;
   }
@@ -98644,11 +98726,13 @@ body, html {
   }
 
   .lg\:max-w-min {
+    max-width: -webkit-min-content;
     max-width: -moz-min-content;
     max-width: min-content;
   }
 
   .lg\:max-w-max {
+    max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
   }
@@ -101662,23 +101746,28 @@ body, html {
   }
 
   .lg\:animate-none {
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
   }
 
   .lg\:animate-spin {
-    animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+            animation: spin 1s linear infinite;
   }
 
   .lg\:animate-ping {
-    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
   .lg\:animate-pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .lg\:animate-bounce {
-    animation: bounce 1s infinite;
+    -webkit-animation: bounce 1s infinite;
+            animation: bounce 1s infinite;
   }
 
   .lg\:cursor-auto {
@@ -101784,10 +101873,12 @@ body, html {
   }
 
   .lg\:auto-cols-min {
+    grid-auto-columns: -webkit-min-content;
     grid-auto-columns: min-content;
   }
 
   .lg\:auto-cols-max {
+    grid-auto-columns: -webkit-max-content;
     grid-auto-columns: max-content;
   }
 
@@ -101816,10 +101907,12 @@ body, html {
   }
 
   .lg\:auto-rows-min {
+    grid-auto-rows: -webkit-min-content;
     grid-auto-rows: min-content;
   }
 
   .lg\:auto-rows-max {
+    grid-auto-rows: -webkit-max-content;
     grid-auto-rows: max-content;
   }
 
@@ -128882,11 +128975,13 @@ body, html {
   }
 
   .xl\:w-min {
+    width: -webkit-min-content;
     width: -moz-min-content;
     width: min-content;
   }
 
   .xl\:w-max {
+    width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
   }
@@ -128900,11 +128995,13 @@ body, html {
   }
 
   .xl\:min-w-min {
+    min-width: -webkit-min-content;
     min-width: -moz-min-content;
     min-width: min-content;
   }
 
   .xl\:min-w-max {
+    min-width: -webkit-max-content;
     min-width: -moz-max-content;
     min-width: max-content;
   }
@@ -128966,11 +129063,13 @@ body, html {
   }
 
   .xl\:max-w-min {
+    max-width: -webkit-min-content;
     max-width: -moz-min-content;
     max-width: min-content;
   }
 
   .xl\:max-w-max {
+    max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
   }
@@ -131984,23 +132083,28 @@ body, html {
   }
 
   .xl\:animate-none {
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
   }
 
   .xl\:animate-spin {
-    animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+            animation: spin 1s linear infinite;
   }
 
   .xl\:animate-ping {
-    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
   .xl\:animate-pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .xl\:animate-bounce {
-    animation: bounce 1s infinite;
+    -webkit-animation: bounce 1s infinite;
+            animation: bounce 1s infinite;
   }
 
   .xl\:cursor-auto {
@@ -132106,10 +132210,12 @@ body, html {
   }
 
   .xl\:auto-cols-min {
+    grid-auto-columns: -webkit-min-content;
     grid-auto-columns: min-content;
   }
 
   .xl\:auto-cols-max {
+    grid-auto-columns: -webkit-max-content;
     grid-auto-columns: max-content;
   }
 
@@ -132138,10 +132244,12 @@ body, html {
   }
 
   .xl\:auto-rows-min {
+    grid-auto-rows: -webkit-min-content;
     grid-auto-rows: min-content;
   }
 
   .xl\:auto-rows-max {
+    grid-auto-rows: -webkit-max-content;
     grid-auto-rows: max-content;
   }
 
@@ -159204,11 +159312,13 @@ body, html {
   }
 
   .\32xl\:w-min {
+    width: -webkit-min-content;
     width: -moz-min-content;
     width: min-content;
   }
 
   .\32xl\:w-max {
+    width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
   }
@@ -159222,11 +159332,13 @@ body, html {
   }
 
   .\32xl\:min-w-min {
+    min-width: -webkit-min-content;
     min-width: -moz-min-content;
     min-width: min-content;
   }
 
   .\32xl\:min-w-max {
+    min-width: -webkit-max-content;
     min-width: -moz-max-content;
     min-width: max-content;
   }
@@ -159288,11 +159400,13 @@ body, html {
   }
 
   .\32xl\:max-w-min {
+    max-width: -webkit-min-content;
     max-width: -moz-min-content;
     max-width: min-content;
   }
 
   .\32xl\:max-w-max {
+    max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
   }
@@ -162306,23 +162420,28 @@ body, html {
   }
 
   .\32xl\:animate-none {
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
   }
 
   .\32xl\:animate-spin {
-    animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+            animation: spin 1s linear infinite;
   }
 
   .\32xl\:animate-ping {
-    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
   .\32xl\:animate-pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .\32xl\:animate-bounce {
-    animation: bounce 1s infinite;
+    -webkit-animation: bounce 1s infinite;
+            animation: bounce 1s infinite;
   }
 
   .\32xl\:cursor-auto {
@@ -162428,10 +162547,12 @@ body, html {
   }
 
   .\32xl\:auto-cols-min {
+    grid-auto-columns: -webkit-min-content;
     grid-auto-columns: min-content;
   }
 
   .\32xl\:auto-cols-max {
+    grid-auto-columns: -webkit-max-content;
     grid-auto-columns: max-content;
   }
 
@@ -162460,10 +162581,12 @@ body, html {
   }
 
   .\32xl\:auto-rows-min {
+    grid-auto-rows: -webkit-min-content;
     grid-auto-rows: min-content;
   }
 
   .\32xl\:auto-rows-max {
+    grid-auto-rows: -webkit-max-content;
     grid-auto-rows: max-content;
   }
 
@@ -183237,3 +183360,4 @@ body, html {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
+

@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { Game } from 'src/models/game';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -14,15 +16,38 @@ export class GameComponent {
   currentCard: any = '';
   game: Game = new Game();
 
-  constructor(public dialog: MatDialog) {}
+  constructor(private route:ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) {}
 
   ngOnInit() {
     this.newGame();
+    this.route.params.subscribe((params)=>{
+      console.log(params['id']);
+
+      // datenbank automatisch werte bei änderungen abrufen: =>valueChanges().subscribe((game) => {console.log('Game update', game); });
+      //mit doc() wird auf die satei zugegriffen bzw. verzeichnis von der collection
+      this.firestore
+        .collection('games')
+        .doc(params['id'])
+        .valueChanges()
+        .subscribe((game:any) => {
+          console.log('Game update', game);
+          this.game.currentPlayer = game['currentPlayer'];
+          this.game.playerCard = game['playerCard'];
+          this.game.players = game['players'];
+          this.game.stack = game['stack'];
+        });
+    })
+
+  
   }
 
   newGame() {
     this.game = new Game();
-    console.log(this.game);
+    //datenbank werte hinzufügen => .add({ Hallo: 'Welt' }) => JSON OBJECT!!;
+    //this.firestore.collection('games').add({ Hallo: 'Welt' });
+
+    //aktuelles object an backend / firebase senden
+    //this.firestore.collection('games').add(this.game.toJson());
   }
 
   takeCard() {

@@ -12,33 +12,38 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./game.component.scss'],
 })
 export class GameComponent {
+  // globale variable für diese component
   pickCardAnimation = false;
   currentCard: any = '';
   game: Game = new Game();
+  gameId: string = '';
 
-  constructor(private route:ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) {}
+  constructor(
+    private route: ActivatedRoute,
+    private firestore: AngularFirestore,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit() {
     this.newGame();
-    this.route.params.subscribe((params)=>{
+    this.route.params.subscribe((params) => {
       console.log(params['id']);
+      this.gameId = params['id'];
 
       // datenbank automatisch werte bei änderungen abrufen: =>valueChanges().subscribe((game) => {console.log('Game update', game); });
       //mit doc() wird auf die satei zugegriffen bzw. verzeichnis von der collection
       this.firestore
         .collection('games')
-        .doc(params['id'])
+        .doc(this.gameId)
         .valueChanges()
-        .subscribe((game:any) => {
+        .subscribe((game: any) => {
           console.log('Game update', game);
           this.game.currentPlayer = game['currentPlayer'];
           this.game.playerCard = game['playerCard'];
           this.game.players = game['players'];
           this.game.stack = game['stack'];
         });
-    })
-
-  
+    });
   }
 
   newGame() {
@@ -54,9 +59,7 @@ export class GameComponent {
     if (!this.pickCardAnimation) {
       this.currentCard = this.game.stack.pop();
       this.pickCardAnimation = true;
-
-      console.log(this.game.playerCard);
-      console.log(this.game.stack);
+      this.saveGame();
 
       this.game.currentPlayer++;
       this.game.currentPlayer =
@@ -65,6 +68,7 @@ export class GameComponent {
       setTimeout(() => {
         this.game.playerCard.push(this.currentCard);
         this.pickCardAnimation = false;
+        this.saveGame();
       }, 1000);
     }
   }
@@ -75,7 +79,15 @@ export class GameComponent {
     dialogRef.afterClosed().subscribe((name: string) => {
       if (name && name.length > 0) {
         this.game.players.push(name);
+        this.saveGame();
       }
     });
+  }
+
+  saveGame() {
+    this.firestore
+      .collection('games')
+      .doc(this.gameId)
+      .update(this.game.toJson());
   }
 }

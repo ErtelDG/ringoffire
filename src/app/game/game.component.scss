@@ -6,7 +6,7 @@
 }
 
 .pick-Card {
-  transform: scale(1.2) translateX(5rem) translateY(-12rem) rotate(-10deg);
+  transform: scale(1.2) translateX(1rem) translateY(-12rem) rotate(-10deg);
   animation: pick-card-animation 1s ease-in-out;
 }
 
@@ -21,11 +21,11 @@
     transform: scale(1.2);
   }
   100% {
-    transform: scale(1.2) translateX(5rem) translateY(-12rem) rotate(-10deg);
+    transform: scale(1.2) translateX(1rem) translateY(-12rem) rotate(-10deg);
   }
 }
 
 .played-card {
   right: 25px;
-  transform: scale(1.2) translateX(5rem) translateY(-12rem) rotate(-10deg);
+  transform: scale(1.2) translateX(1rem) translateY(-12rem) rotate(-10deg);
 }

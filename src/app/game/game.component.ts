@@ -12,9 +12,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./game.component.scss'],
 })
 export class GameComponent {
-  // globale variable für diese component
-  pickCardAnimation = false;
-  currentCard: any = '';
+  // globale variable für diese component um diese globale für alle zu synchronisieren über firebase, müssen diese variable nachj game.ts wo auch die spieler-, kartendaten usw. hinterlegt sind => jetzt auskommentiert sind in game.ts
+  //pickCardAnimation = false;
+  //currentCard: any = '';
+
   game: Game = new Game();
   gameId: string = '';
 
@@ -32,6 +33,7 @@ export class GameComponent {
 
       // datenbank automatisch werte bei änderungen abrufen: =>valueChanges().subscribe((game) => {console.log('Game update', game); });
       //mit doc() wird auf die satei zugegriffen bzw. verzeichnis von der collection
+      //subscribe ruft die nachfolgende genannte daten ab um diese zu synchonisieren, sobald diese geändert werden auch pickCardAnimation und  currentCard müssen hinzugefügt werden;
       this.firestore
         .collection('games')
         .doc(this.gameId)
@@ -42,6 +44,8 @@ export class GameComponent {
           this.game.playerCard = game['playerCard'];
           this.game.players = game['players'];
           this.game.stack = game['stack'];
+          this.game.pickCardAnimation = game['pickCardAnimation'];
+          this.game.currentCard = game['currentCard'];
         });
     });
   }
@@ -56,18 +60,18 @@ export class GameComponent {
   }
 
   takeCard() {
-    if (!this.pickCardAnimation) {
-      this.currentCard = this.game.stack.pop();
-      this.pickCardAnimation = true;
-      this.saveGame();
-
+    if (!this.game.pickCardAnimation) {
+      this.game.currentCard = this.game.stack.pop();
+      this.game.pickCardAnimation = true;
       this.game.currentPlayer++;
       this.game.currentPlayer =
         this.game.currentPlayer % this.game.players.length;
+      //obere änderungen werden sofort wieder gesendet und gespeicher in firebase
+      this.saveGame();
 
       setTimeout(() => {
-        this.game.playerCard.push(this.currentCard);
-        this.pickCardAnimation = false;
+        this.game.playerCard.push(this.game.currentCard);
+        this.game.pickCardAnimation = false;
         this.saveGame();
       }, 1000);
     }

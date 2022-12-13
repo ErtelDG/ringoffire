@@ -1,5 +1,5 @@
 <div class="w-full h-full grid grid-cols-12 grid-rows-12 gap-1 p-2 bg-board bg-cover">
-  <div class="col-start-10 col-span-3 row-start-2 row-end-11 flex flex-col justify-between">
+  <div class="col-start-9 col-span-4 row-start-2 row-end-11 flex flex-col justify-between">
     <div>
       <app-player *ngFor="let player of game.players; let i = index;" [name]="player"
         [playerActive]="i == game.currentPlayer"></app-player>
@@ -22,13 +22,13 @@
       src="../../assets/img/cards/{{card}}.png">
 
     <!-- current cars (animation) -->
-    <img (click)="takeCard()" *ngIf="pickCardAnimation"
+    <img (click)="takeCard()" *ngIf="game.pickCardAnimation"
       class="absolute cursor-pointer w-28 h-42 transition-card pick-Card" style="right:25px"
-      src="../../assets/img/cards/{{currentCard}}.png">
+      src="../../assets/img/cards/{{game.currentCard}}.png">
   </div>
 
   <!-- game info -->
   <div class="row-start-11 row-span-2 col-start-2 col-span-8 flex justify-center items-center">
-    <app-game-info  [card]="currentCard" class="w-full"></app-game-info>
+    <app-game-info  [card]="game.currentCard" class="w-full"></app-game-info>
   </div>
 </div>

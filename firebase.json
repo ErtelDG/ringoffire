@@ -1,4 +1,7 @@
 {
+  "functions": {
+    "source": "functions"
+  },
   "database": {
     "rules": "database.rules.json"
   },
@@ -6,18 +9,6 @@
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
-  "functions": [
-    {
-      "source": "functions",
-      "codebase": "default",
-      "ignore": [
-        "node_modules",
-        ".git",
-        "firebase-debug.log",
-        "firebase-debug.*.log"
-      ]
-    }
-  ],
   "hosting": {
     "public": "dist/ringoffire",
     "ignore": [
@@ -34,8 +25,5 @@
   },
   "storage": {
     "rules": "storage.rules"
-  },
-  "remoteconfig": {
-    "template": "remoteconfig.template.json"
   }
 }
